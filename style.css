@@ -1,0 +1,120 @@
+.dws-wrapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-images {
+  /* мин высота */
+  min-width: 1200px;
+  height: 500px;
+  display: flex;
+  border: 1px #d6d6d6;
+  padding: 20px;
+}
+
+.img-box {
+  /* расстояние между картинок */
+  flex-grow: 1;
+  /* высота и ширина */
+  background-size: 750px 500px;
+  /* позицианирование по центру */
+  background-position: center;
+  /* чтоб не повторялась */
+  background-repeat: no-repeat;
+  /* для того чтоб плавно анимировалась */
+  transition: 1s;
+  /* обесвечивание изображения */
+  filter: grayscale(1);
+  /* прозрачность элемента */
+  opacity: 0.8;
+  position: relative;
+  /* скрывает все выплывающеяся элементы */
+  overflow: hidden;
+}
+
+/* анимация */
+/* принаведении */
+.img-box:hover {
+  /* ширина и высота */
+  background-size: 900px 600px;
+  /* ширина блока */
+  flex-grow: 5;
+  /* для того чтоб изображения при наведении становились цветными */
+  filter: grayscale(0);
+  /* прозрачность элемента */
+  opacity: 1;
+}
+
+/* блок с текстовым содержания */
+.content {
+  color: white;
+  background: #000;
+  opacity: 0.7;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  text-align: justify;
+  width: 70%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  /* внутренние отступы */
+  padding: 15px;
+  box-sizing: border-box;
+  -webkit-transform: translateY(120%);
+  -moz-transform: translateY(120%);
+  -ms-transform: translateY(120%);
+  -o-transform: translateY(120%);
+  transform: translateY(120%);
+  transition: 1s;
+}
+
+.img-box:hover .content {
+  transform: translateY(0);
+  /* задержка 1 сек */
+  transition-delay: 0.5s;
+}
+
+.content h2 {
+  margin: 0 0 5px;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 26px;
+  color: #4cdde5;
+}
+
+.p {
+  margin: 0;
+  padding: 0;
+}
+
+/* адаптация */
+@media only screen and (max-width: 1200px) {
+  .container-images {
+    min-width: 95%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container-images {
+    height: 250px;
+  }
+  .img-box {
+    background-size: 450px 300px;
+  }
+  .img-box:hover {
+    background-size: 525px 350px;
+  }
+  .conten {
+    width: 93%;
+    padding: 10px;
+  }
+  /* шрифт загаловка */
+  .conten h2 {
+    font-size: 16px;
+  }
+  .content p {
+    font-size: 12px;
+  }
+}
